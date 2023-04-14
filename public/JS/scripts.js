@@ -29,6 +29,14 @@ const submitForm = () => {
     console.log('form data: ', formData);
 }
 
+const getProjects = () => {
+    $.get('/api/projects',(response) => {
+        if(response.statusCode==200){
+            addCards(response.data);
+                }
+    })
+}
+
 $(document).ready(function(){
     $('.materialboxed').materialbox();
     $('.modal').modal();
