@@ -21,6 +21,7 @@ function dbConnection(collectionName) {
             console.log(dbCollection);
         } else {
             console.log(err);
+            process.exit(1);
         }
     });
 }
@@ -41,7 +42,7 @@ app.get('/api/cats',(req,res) => {
         if (error) {
             res.json({statusCode:400, message: err});
         } else {
-            res.json({statusCode: 200, data: result, message: 'Successfully'});
+            res.json({statusCode: 200, data: result, message: 'Success'});
         }
     });
 });
