@@ -2,7 +2,7 @@ var express = require("express")
 var app = express()
 const {MongoClient} = require('mongodb');
 const uri = 'mongodb+srv://admin:admin@cluster0.ggzuodr.mongodb.net/?retryWrites=true&w=majority';
-const client = new MongoClient(uri);
+const client = new MongoClient(uri, { useNewUrlParser: true});
 let dbCollection;
 
 app.use(express.static(__dirname+'/public'))
