@@ -1,19 +1,19 @@
-let model = require('../model/model')
+let model = require('../model/model');
 
-const createCat = (req,res) => {
+const insertCat = (req,res) => {
     let cat = req.body;
     model.insertCat(cat, (err, result) => {
         if (err) {
-            res.json({statusCode:400, message: err});
+            res.json({statusCode: 400, message: err});
         } else {
-            res.json({statusCode: 200, data: result, message: 'Cat successfully added'});
+            res.json({statusCode: 200, data: result, message: 'Cat Successfully Added'});
         }
     });
 }
 
-const getAllCats = () => {
-    model.getAllCats((error, result) => {
-        if (error) {
+const getAllCats = (req, res) => {
+    model.getAllCats((err, result) => {
+        if (err) {
             res.json({statusCode: 400, message: err});
         } else {
             res.json({statusCode: 200, data: result, message: 'Successful'});
@@ -21,4 +21,4 @@ const getAllCats = () => {
     });
 }
 
-module.exports = {createCat, getAllCats}
+module.exports = {insertCat, getAllCats}

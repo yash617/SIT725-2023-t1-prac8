@@ -1,12 +1,12 @@
 const {MongoClient} = require('mongodb');
 const uri = 'mongodb+srv://admin:admin@cluster0.ggzuodr.mongodb.net/?retryWrites=true&w=majority';
-const client = new MongoClient(uri, { useNewUrlParser: true});
+const client = new MongoClient(uri);
 
 client.connect(err => {
     if (!err) {
         console.log('DB Connected');
     } else {
-        console.log(err);
+        console.error(err);
     }
 });
 

@@ -1,9 +1,9 @@
-var express = require("express")
-let router = express.Router()
-let controller = require('../controller/controller')
+var express = require('express');
+var router = express.Router();
+let controller = require('../controller/controller');
 
 router.post('/api/cats', (req, res) => {
-    controller.createCat(req,res);
+    controller.insertCat(req,res);
 });
 
 router.get('/api/cats',(req,res) => {

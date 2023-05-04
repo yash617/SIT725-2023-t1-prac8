@@ -1,16 +1,3 @@
-const cardList = [
-    {
-        title: 'Kitten 2', image: 'images/kitten-2.png', link: 'Kitten 2', description: 'Kitten 2'
-    },
-    {
-        title: 'Kitten 3', image: 'images/kitten-3.png', link: 'Kitten 3', description: 'Kitten 3'
-    }
-];
-
-const clickMe = () => {
-    console.log('clickMe clicked');
-}
-
 const addCards = (items) => {
     console.log(items);
     items.forEach(item => {
@@ -31,11 +18,11 @@ const submitForm = () => {
 }
 
 const getCats = () => {
-    $.get('/api/cats',(response) => {
-        if(response.statusCode === 200){
-            addCards(response.data);
-                }
-    })
+    $.get('/api/cats', (res) => {
+        if (res.statusCode === 200) {
+            addCards(res.data);
+        }
+    });
 }
 
 const addCat = (cat) => {
@@ -55,6 +42,7 @@ $(document).ready(function(){
     $('.modal').modal();
 
     getCats();
+
     $('#formSubmit').click(()=>{
         submitForm();
     })

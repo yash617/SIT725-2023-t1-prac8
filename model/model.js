@@ -5,7 +5,7 @@ function insertCat(cat, callback) {
     collection.insertOne(cat, callback);
 }
 
-function getAllCats(callback) {
+function getAllCats(callback){
     collection.find().toArray(callback);
 }
 
