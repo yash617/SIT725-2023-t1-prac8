@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-let controller = require('../contoller/controller');
+let controller = require('../controller/controller');
 
 router.post('/api/cats', (req, res) => {
     controller.insertCat(req, res);
